@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${title}"></title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	</link>
+
+</head>
+
+<body>
+	<div>
+		<h1 class="color-rojo" th:text="${title}"></h1>
+		<h2 class="color-azul">Decorando con estilos css recursos estáticos</h2>
+		<img th:src="@{/images/boot_spring.png}"></img>
+	</div>
+
+</body>
+
+</html>
