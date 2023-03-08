@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}"></title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
+</head>
+
+<body>
+	<div>
+		<h3 th:text="${title}"></h3>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-1">Id:</div>
+				<div class="col-sm-4">
+					<span th:text="${user.id}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">First Name:</div>
+				<div class="col-sm-4">
+					<span th:text="${user.firstName}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Last Name:</div>
+				<div class="col-sm-4">
+					<span th:text="${user.lastName}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Username:</div>
+				<div class="col-sm-4">
+					<span th:text="${user.username}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Password:</div>
+				<div class="col-sm-4">
+					<span th:text="${user.password}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Email:</div>
+				<div class="col-sm-4">
+					<span th:text="${user.email}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Age:</div>
+				<div class="col-sm-4">
+					<span th:text="${user.age}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Birthdate:</div>
+				<div class="col-sm-4">
+					<span th:text="${#calendars.format(user.birthdate, 'dd-MM-yyyy')}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Country:</div>
+				<div class="col-sm-4">
+					<span
+						th:text="${user.country.id + ' - ' + user.country.code + ' - ' + user.country.name}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Roles:</div>
+				<div class="col-sm-4">
+					<ul class="list-group">
+						<li th:each="role: ${user.roles}"
+							th:text="${role.id + ' - ' + role.code + ' - ' + role.name}"
+							class="list-group-item"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Is enabled:</div>
+				<div class="col-sm-4">
+					<span th:text="${user.enabled}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Gender:</div>
+				<div class="col-sm-4">
+					<span th:text="${user.gender}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">Secret Key:</div>
+				<div class="col-sm-4">
+					<span th:text="${user.secretKey}"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div>
+					<a th:href="@{/form/form}" class="btn btn-success">Back</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
