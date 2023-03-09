@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<section th:fragment="interceptor" th:if="${elapsedTime != null}">
+		<div class="alert alert-success">
+			<span th:text="'Elapsed time: ' + ${elapsedTime} + ' milliseconds.'"></span>
+		</div>
+	</section>
+</body>
+</html>
